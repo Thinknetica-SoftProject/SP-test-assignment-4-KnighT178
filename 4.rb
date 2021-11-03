@@ -16,4 +16,18 @@
 #
 ## Решение:
 
+def area_needed(line)
+  array = line.split('x').map(&:to_i).sort
+  3 * array[0]*array[1] + 2 * array[0]*array[2] + 2 * array[1]*array[2]
+
+  
+end
+
+file = File.open('data/4.txt', 'r:UTF-8')
+total_area = 0
+file.each do |line|
+  total_area += area_needed(line)
+end
+puts total_area
+file.close
 
