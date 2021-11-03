@@ -16,6 +16,19 @@
 #
 ## Решение:
 
+file = File.open('data/1.txt', 'r:UTF-8')
+input = file.read
+floor = 0
 
+input.each_char do |letter|
+  case letter
+  when '('
+    floor += 1
+  when ')'
+    floor -= 1
+  end
+end
+file.close
+puts floor
 
 
