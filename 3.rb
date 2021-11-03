@@ -10,4 +10,15 @@
 #
 ## Решение:
 
+def min_max_difference(line)
+  array = line.split.map(&:to_i)
+  array.max - array.min
+end
 
+file = File.open('data/3.txt', 'r:UTF-8')
+door_key = 0
+file.each do |line|
+  door_key += min_max_difference(line)
+end
+puts door_key
+file.close
