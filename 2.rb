@@ -16,3 +16,13 @@
 #
 ## Решение:
 
+require 'digest'
+str = gets.chomp
+md_hash = Digest::MD5.hexdigest(str)
+num = 1
+until md_hash.start_with?('00000')
+  num += 1
+  md_hash = Digest::MD5.hexdigest(str + num.to_s)
+end
+
+puts num
